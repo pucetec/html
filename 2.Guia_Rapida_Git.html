@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    PUCETEC - Guía Rápida: Git + GitLab
+  </title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Guía Rápida: Git + GitLab</h1>
+      <p class="lead">Material de apoyo para estudiantes — control de versiones y entrega de tareas.</p>
+    </header>
+
+    <section class="card">
+      <span class="badge">Objetivo</span>
+      <p>
+        Aprender el flujo básico para trabajar con Git y GitLab: crear una llave SSH, clonar un repositorio, crear un
+        branch, guardar cambios y subirlos para revisión.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>📚 Contenidos</h2>
+      <p class="muted">
+        Esta guía resume los comandos mínimos que necesitas para trabajar en tus repositorios de clase.
+      </p>
+      <ul>
+        <li>Crear y registrar una llave SSH.</li>
+        <li>Clonar un repositorio desde GitLab.</li>
+        <li>Crear un branch de trabajo.</li>
+        <li>Agregar archivos y crear commits.</li>
+        <li>Configurar nombre y correo en Git.</li>
+        <li>Subir el branch a GitLab.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>🔐 1. Crear y registrar tu llave SSH</h2>
+      <p>
+        La llave SSH permite conectar tu computadora con GitLab sin escribir usuario y contraseña en cada operación.
+        Ejecuta este comando en tu terminal:
+      </p>
+      <pre><code>ssh-keygen</code></pre>
+
+      <p>
+        Presiona <strong>Enter</strong> en todas las opciones para aceptar la configuración por defecto. Luego, muestra
+        el contenido de la llave pública con:
+      </p>
+      <pre><code>cat ~/.ssh/id_rsa.pub</code></pre>
+
+      <div class="tip">
+        <p>
+          Copia todo el texto de la llave pública y pégalo en GitLab desde
+          <strong>Settings → SSH Keys → Add new key</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📥 2. Clonar el repositorio</h2>
+      <p>
+        Una vez configurada la llave, clona el repositorio al que fuiste invitado. El comando crea una copia local del
+        proyecto en tu computadora.
+      </p>
+      <pre><code>git clone git@gitlab.com:usuario/nombre-del-repositorio.git</code></pre>
+
+      <p>Después de clonar, entra a la carpeta del repositorio:</p>
+      <pre><code>cd nombre-del-repositorio</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>🌿 3. Crear y cambiar a tu branch</h2>
+      <p>
+        Un branch es una línea de trabajo independiente. Para tareas de clase, crea un branch con un nombre claro.
+      </p>
+      <pre><code>git checkout -b NombreBranch</code></pre>
+
+      <p>Ejemplo:</p>
+      <pre><code>git checkout -b FabianMaqueta</code></pre>
+
+      <p class="muted">
+        También puedes usar nombres relacionados con la tarea, por ejemplo <code>FabianClaseHTML</code> o
+        <code>FabianFormulario</code>.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>💾 4. Agregar y guardar tus archivos</h2>
+      <p>
+        Después de crear o modificar tus archivos, Git necesita saber qué cambios quieres guardar.
+      </p>
+
+      <h3>Ver el estado del repositorio</h3>
+      <pre><code>git status</code></pre>
+
+      <h3>Agregar un archivo específico</h3>
+      <pre><code>git add archivo.html</code></pre>
+
+      <h3>Crear un commit</h3>
+      <p>
+        El commit guarda una versión de tus cambios con un mensaje descriptivo.
+      </p>
+      <pre><code>git commit -m "Agrego mi maqueta en HTML"</code></pre>
+
+      <h3>Configurar nombre y correo</h3>
+      <p>Si Git te pide configurar tu nombre o correo, usa:</p>
+      <pre><code>git config --global user.name "Tu Nombre"
+git config --global user.email "tu_correo@ejemplo.com"</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>🚀 5. Subir tu branch a GitLab</h2>
+      <p>
+        Finalmente, sube tus cambios al repositorio remoto para que estén disponibles en GitLab.
+      </p>
+      <pre><code>git push origin NombreBranch</code></pre>
+
+      <p>Ejemplo:</p>
+      <pre><code>git push origin FabianMaqueta</code></pre>
+
+      <div class="tip">
+        <p>
+          Después de subir tu branch, GitLab normalmente mostrará una opción para crear un Merge Request. Usa esa opción
+          cuando necesites entregar tu trabajo para revisión.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🧠 Resumen de comandos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Acción</th>
+            <th>Comando</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Crear llave SSH</td>
+            <td><code>ssh-keygen</code></td>
+          </tr>
+          <tr>
+            <td>Ver llave pública</td>
+            <td><code>cat ~/.ssh/id_rsa.pub</code></td>
+          </tr>
+          <tr>
+            <td>Clonar repo</td>
+            <td><code>git clone git@gitlab.com:usuario/repositorio.git</code></td>
+          </tr>
+          <tr>
+            <td>Entrar al repo</td>
+            <td><code>cd nombre-del-repositorio</code></td>
+          </tr>
+          <tr>
+            <td>Crear branch</td>
+            <td><code>git checkout -b NombreBranch</code></td>
+          </tr>
+          <tr>
+            <td>Ver cambios</td>
+            <td><code>git status</code></td>
+          </tr>
+          <tr>
+            <td>Agregar archivo</td>
+            <td><code>git add archivo.html</code></td>
+          </tr>
+          <tr>
+            <td>Guardar cambios</td>
+            <td><code>git commit -m "mensaje"</code></td>
+          </tr>
+          <tr>
+            <td>Configurar nombre</td>
+            <td><code>git config --global user.name "Tu Nombre"</code></td>
+          </tr>
+          <tr>
+            <td>Configurar correo</td>
+            <td><code>git config --global user.email "tu@correo.com"</code></td>
+          </tr>
+          <tr>
+            <td>Subir branch</td>
+            <td><code>git push origin NombreBranch</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>❓ Preguntas rápidas</h2>
+
+      <details>
+        <summary>¿Qué es Git?</summary>
+        <p>Git es una herramienta de control de versiones que permite guardar el historial de cambios de un proyecto.</p>
+      </details>
+
+      <details>
+        <summary>¿Qué es GitLab?</summary>
+        <p>GitLab es una plataforma donde puedes alojar repositorios Git, colaborar y entregar cambios mediante Merge Requests.</p>
+      </details>
+
+      <details>
+        <summary>¿Qué es un branch?</summary>
+        <p>Un branch es una rama de trabajo donde puedes hacer cambios sin modificar directamente la rama principal.</p>
+      </details>
+
+      <details>
+        <summary>¿Qué es un commit?</summary>
+        <p>Un commit es un punto guardado del historial del proyecto, acompañado por un mensaje que describe el cambio.</p>
+      </details>
+
+      <h3>🎯 Mini desafío</h3>
+      <div class="tip">
+        <p><strong>Desafío:</strong> Practica el flujo completo:</p>
+        <ol>
+          <li>Clona un repositorio de prueba.</li>
+          <li>Crea un branch con tu nombre.</li>
+          <li>Agrega un archivo HTML simple.</li>
+          <li>Haz un commit con un mensaje claro.</li>
+          <li>Sube tu branch a GitLab.</li>
+        </ol>
+      </div>
+    </section>
+
+    <footer>
+      <p class="muted">
+        <strong>Facultad:</strong> Pucetec<br>
+        <strong>Carrera:</strong> Desarrollo de Software<br>
+        <strong>Materia:</strong> Desarrollo Web<br>
+        <strong>Docente:</strong> Fabián Aguirre
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>

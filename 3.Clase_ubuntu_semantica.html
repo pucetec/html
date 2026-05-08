@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    PUCETEC - Clase: Ubuntu y Semántica en HTML
+  </title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Clase: Creación de usuario en Ubuntu y Semántica en HTML</h1>
+        <p class="lead">Material de apoyo para estudiantes — desarrollo web.</p>
+      </header>
+
+      <section class="card">
+        <span class="badge">Objetivo</span>
+        <p>
+          Aprender a crear un usuario con privilegios en Ubuntu y comprender
+          cómo aplicar semántica en HTML para estructurar correctamente un
+          documento y un formulario.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>🧑‍💻 Creación de usuario en Ubuntu</h2>
+        <p class="muted">
+          Cada vez que utilices una nueva máquina o sesión de Ubuntu, crea tu
+          usuario personal para mantener tu espacio de trabajo y permisos
+          adecuados.
+        </p>
+
+        <h3>⚙️ Comando utilizado</h3>
+        <pre><code>sudo /usr/sbin/useradd -G adm,sudo -m -s /bin/bash nombreDeUsuario</code></pre>
+
+        <h3>🧩 Explicación de cada parte</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Parte del comando</th>
+              <th>Significado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>sudo</code></td>
+              <td>Ejecuta el comando con permisos de administrador.</td>
+            </tr>
+            <tr>
+              <td><code>/usr/sbin/useradd</code></td>
+              <td>Programa que crea un nuevo usuario en el sistema.</td>
+            </tr>
+            <tr>
+              <td><code>-G adm,sudo</code></td>
+              <td>
+                Asigna al usuario a los grupos <b>adm</b> y <b>sudo</b>,
+                otorgando privilegios administrativos.
+              </td>
+            </tr>
+            <tr>
+              <td><code>-m</code></td>
+              <td>
+                Crea la carpeta personal del usuario
+                (<code>/home/nombreDeUsuario</code>).
+              </td>
+            </tr>
+            <tr>
+              <td><code>-s /bin/bash</code></td>
+              <td>Define <code>bash</code> como intérprete por defecto.</td>
+            </tr>
+            <tr>
+              <td><code>nombreDeUsuario</code></td>
+              <td>Reemplaza con el nombre de usuario que deseas crear.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="tip">
+          <strong>Ejemplo:</strong>
+          <pre><code>sudo /usr/sbin/useradd -G adm,sudo -m -s /bin/bash fabian</code></pre>
+          <p class="muted">
+            Luego, establece una contraseña para el usuario creado:
+            <code>sudo passwd fabian</code>
+          </p>
+        </div>
+
+        <details>
+          <summary>¿Y si el usuario ya existe?</summary>
+          <p>Puedes añadirlo a los grupos necesarios:</p>
+          <pre><code>sudo usermod -aG adm,sudo nombreDeUsuario</code></pre>
+        </details>
+      </section>
+
+      <section class="card">
+        <h2>🌐 Semántica en HTML</h2>
+        <p>
+          La <strong>semántica</strong> en HTML es usar etiquetas por su
+          significado, no solo por su apariencia. Así los navegadores,
+          buscadores y lectores de pantalla comprenden mejor la estructura del
+          documento.
+        </p>
+
+        <div>
+          <div class="card">
+            <h3>Ejemplos: no semántico vs semántico</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>No semántico</th>
+                  <th>Semántico</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <code
+                      >&lt;div
+                      style="font-size:30px"&gt;Formulario&lt;/div&gt;</code
+                    >
+                  </td>
+                  <td><code>&lt;h1&gt;Formulario&lt;/h1&gt;</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;div&gt;Pie de página&lt;/div&gt;</code></td>
+                  <td>
+                    <code>&lt;footer&gt;Pie de página&lt;/footer&gt;</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>&lt;b&gt;Nombre:&lt;/b&gt;</code></td>
+                  <td>
+                    <code>&lt;label for="nombre"&gt;Nombre:&lt;/label&gt;</code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <h3>Buenas prácticas</h3>
+            <ul>
+              <li>
+                Usa títulos jerárquicos (<code>&lt;h1&gt;</code>,
+                <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>) en orden.
+              </li>
+              <li>
+                Divide secciones con <code>&lt;section&gt;</code>,
+                <code>&lt;article&gt;</code> y separadores
+                <code>&lt;hr&gt;</code>.
+              </li>
+              <li>
+                Evita usar <code>&lt;div&gt;</code> solo para dar estilo;
+                prefiere etiquetas con significado.
+              </li>
+              <li>
+                Mantén el código limpio, indentado y con atributos bien escritos
+                (<code>name</code>, <code>type</code>, <code>value</code>,
+                <code>id</code>, <code>for</code>).
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Mini ejemplo integrando semántica + formulario</h3>
+        <pre><code>&lt;h1&gt;Intereses de Películas&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;form action=&quot;/buscar&quot; method=&quot;get&quot;&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Datos generales&lt;/h2&gt;
+    &lt;label for=&quot;nombres&quot;&gt;Nombres:&lt;/label&gt;
+    &lt;input id=&quot;nombres&quot; name=&quot;nombres&quot; type=&quot;text&quot; required /&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;Preferencias&lt;/h2&gt;
+    &lt;p&gt;Género:&lt;/p&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;genero&quot; value=&quot;masculino&quot; /&gt; Masculino&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;genero&quot; value=&quot;femenino&quot; /&gt; Femenino&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;genero&quot; value=&quot;otro&quot; /&gt; Otro&lt;/label&gt;
+
+    &lt;p&gt;Categorías de interés:&lt;/p&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;categorias&quot; value=&quot;accion&quot; /&gt; Acción&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;categorias&quot; value=&quot;comedia&quot; /&gt; Comedia&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;categorias&quot; value=&quot;drama&quot; /&gt; Drama&lt;/label&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;Frecuencia de notificaciones&lt;/h2&gt;
+    &lt;label for=&quot;frecuencia&quot;&gt;Cada cuánto deseas recibirlas:&lt;/label&gt;
+    &lt;select id=&quot;frecuencia&quot; name=&quot;frecuencia&quot;&gt;
+      &lt;option value=&quot;semanal&quot;&gt;Semanal&lt;/option&gt;
+      &lt;option value=&quot;quincenal&quot;&gt;Quincenal&lt;/option&gt;
+      &lt;option value=&quot;mensual&quot;&gt;Mensual&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/section&gt;
+
+  &lt;hr /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Enviar formulario&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </section>
+
+      <footer>
+        <p class="muted">
+          <strong>Facultad:</strong> Pucetec<br>
+          <strong>Carrera:</strong> Desarrollo de Software<br>
+          <strong>Materia:</strong> Desarrollo Web<br>
+          <strong>Docente:</strong> Fabián Aguirre
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

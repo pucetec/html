@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    PUCETEC - Clase: DIV, display y Flexbox
+  </title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Clase: &lt;div&gt;, <code>display</code> y Flexbox</h1>
+        <p class="lead">
+          Organización visual del contenido: del flujo normal a los layouts con
+          flexbox.
+        </p>
+      </header>
+
+      <section class="card">
+        <span class="badge">Objetivo</span>
+        <p>
+          Comprender el comportamiento de los elementos <em>block</em>,
+          <em>inline</em>, <em>inline-block</em> y aplicar
+          <code>display:flex</code> para crear distribuciones responsivas y
+          ordenadas.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>1) ¿Qué es un &lt;div&gt;?</h2>
+        <p>
+          Es una caja genérica de bloque (sin significado semántico) usada para
+          agrupar contenido y aplicar estilos. Úsala con criterio: si existe una
+          etiqueta semántica que describa mejor el contenido, prefiérela.
+        </p>
+        <pre><code>&lt;div class="tarjeta"&gt;
+  &lt;h2&gt;Título&lt;/h2&gt;
+  &lt;p&gt;Texto dentro de un div.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+
+      <section class="card">
+        <h2>2) Propiedad <code>display</code></h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Comportamiento</th>
+              <th>Ejemplos de uso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>block</code></td>
+              <td>
+                Ocupa todo el ancho; inicia en línea nueva. Se pueden definir
+                ancho/alto.
+              </td>
+              <td>&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;</td>
+            </tr>
+            <tr>
+              <td><code>inline</code></td>
+              <td>
+                Ocupa solo el ancho del contenido; no inicia en línea nueva. No
+                toma ancho/alto.
+              </td>
+              <td>&lt;span&gt;, &lt;a&gt;</td>
+            </tr>
+            <tr>
+              <td><code>inline-block</code></td>
+              <td>
+                Como inline, pero admite ancho/alto y márgenes verticales.
+              </td>
+              <td>Badges, chips, botones personalizados</td>
+            </tr>
+            <tr>
+              <td><code>flex</code></td>
+              <td>
+                Convierte el elemento en contenedor flexible para organizar
+                ítems en fila o columna.
+              </td>
+              <td>Navbars, tarjetas, grids simples</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Demostración rápida</h3>
+        <div class="demo-row" style="margin-bottom: 10px">
+          <div class="box block">block A</div>
+          <div class="box block">block B</div>
+        </div>
+        <div class="demo-row" style="margin-bottom: 10px">
+          <span class="box inline">inline A</span>
+          <span class="box inline">inline B</span>
+        </div>
+        <div class="demo-row">
+          <div class="box inline-block">inline-block A</div>
+          <div class="box inline-block">inline-block B</div>
+        </div>
+        <p class="tip">
+          Prueba cambiar las clases <code>block</code>, <code>inline</code> e
+          <code>inline-block</code> para observar el flujo de los elementos.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>3) Flexbox práctico</h2>
+        <p>
+          Flexbox distribuye elementos en una dimensión (fila o columna),
+          facilita alineación y espacio entre ellos.
+        </p>
+
+        <div class="playground">
+          <label
+            >direction
+            <select id="dir">
+              <option>row</option>
+              <option>row-reverse</option>
+              <option>column</option>
+              <option>column-reverse</option>
+            </select>
+          </label>
+          <label
+            >justify-content
+            <select id="justify">
+              <option>flex-start</option>
+              <option>center</option>
+              <option>flex-end</option>
+              <option>space-between</option>
+              <option>space-around</option>
+              <option>space-evenly</option>
+            </select>
+          </label>
+          <label
+            >align-items
+            <select id="align">
+              <option>stretch</option>
+              <option>flex-start</option>
+              <option>center</option>
+              <option>flex-end</option>
+              <option>baseline</option>
+            </select>
+          </label>
+          <label
+            >gap
+            <input id="gap" type="range" min="0" max="32" step="2" value="12" />
+          </label>
+        </div>
+
+        <div
+          id="flexDemo"
+          class="flex-demo"
+          style="
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+            gap: 12px;
+          "
+        >
+          <div class="flex-item">A</div>
+          <div class="flex-item">B</div>
+          <div class="flex-item">C</div>
+        </div>
+
+        <h3>CSS base del ejemplo</h3>
+        <pre><code>.contenedor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid #333;
+  height: 200px;
+}
+.caja {
+  background: #60a5fa;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}</code></pre>
+      </section>
+
+      <footer>
+        <p class="muted">
+          <strong>Facultad:</strong> Pucetec<br>
+          <strong>Carrera:</strong> Desarrollo de Software<br>
+          <strong>Materia:</strong> Desarrollo Web<br>
+          <strong>Docente:</strong> Fabián Aguirre
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      const demo = document.getElementById("flexDemo");
+      const dir = document.getElementById("dir");
+      const justify = document.getElementById("justify");
+      const align = document.getElementById("align");
+      const gap = document.getElementById("gap");
+
+      function update() {
+        demo.style.flexDirection = dir.value;
+        demo.style.justifyContent = justify.value;
+        demo.style.alignItems = align.value;
+        demo.style.gap = gap.value + "px";
+      }
+      [dir, justify, align, gap].forEach((el) =>
+        el.addEventListener("input", update)
+      );
+    </script>
+  </body>
+</html>
