@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    PUCETEC - Clase: Introducción a HTML
+  </title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Clase: Introducción a HTML</h1>
+      <p class="lead">Material de apoyo para estudiantes — desarrollo web.</p>
+    </header>
+
+    <section class="card">
+      <span class="badge">Objetivo</span>
+      <p>
+        Comprender cómo funciona un sitio web, qué papel cumple HTML dentro del ecosistema web y cuáles son sus
+        componentes principales antes de escribir nuestras primeras páginas.
+      </p>
+    </section>
+
+    <!-- Contenidos -->
+    <section class="card">
+      <h2>📚 Contenidos</h2>
+      <p class="muted">
+        En esta clase revisaremos los conceptos base que aparecen en la presentación de introducción.
+      </p>
+      <ul>
+        <li>¿Cómo funciona un website?</li>
+        <li>HTML: HyperText Markup Language</li>
+        <li>Componentes principales de HTML</li>
+        <li>Componentes secundarios de HTML</li>
+        <li>Hojas de estilos CSS: Cascading Style Sheets</li>
+        <li>HTTP: Hypertext Transfer Protocol</li>
+        <li>Métodos HTTP: POST, GET, PUT, DELETE y HEAD</li>
+      </ul>
+    </section>
+
+    <!-- Cómo funciona un website -->
+    <section class="card">
+      <h2>🌐 ¿Cómo funciona un website?</h2>
+      <p class="muted">
+        Un website funciona gracias a la comunicación entre un navegador y un servidor. El navegador solicita recursos,
+        el servidor responde y el navegador interpreta esos archivos para mostrar la página.
+      </p>
+
+      <h3>Flujo básico</h3>
+      <ol>
+        <li>El usuario escribe una URL o hace clic en un enlace.</li>
+        <li>El navegador envía una solicitud HTTP al servidor.</li>
+        <li>El servidor responde con archivos como HTML, CSS, JavaScript, imágenes o datos.</li>
+        <li>El navegador procesa esos archivos y renderiza la página.</li>
+      </ol>
+
+      <pre><code>Usuario → Navegador → Solicitud HTTP → Servidor
+Usuario ← Navegador ← Respuesta HTTP ← Servidor</code></pre>
+
+      <h3>Archivos comunes de una página</h3>
+      <div class="grid">
+        <div class="tip">
+          <p><strong>HTML</strong></p>
+          <p>Define la estructura y el contenido visible de la página.</p>
+        </div>
+        <div class="tip">
+          <p><strong>CSS</strong></p>
+          <p>Define colores, tamaños, espaciados, tipografías y diseño visual.</p>
+        </div>
+        <div class="tip">
+          <p><strong>JavaScript</strong></p>
+          <p>Agrega comportamiento, interactividad y lógica en el navegador.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HTML -->
+    <section class="card">
+      <h2>🏗️ HTML (HyperText Markup Language)</h2>
+      <p class="muted">
+        HTML es el lenguaje que usamos para escribir páginas de hipertexto mediante etiquetas o tags.
+      </p>
+
+      <h3>Historia breve</h3>
+      <ul>
+        <li>
+          <strong>1980:</strong> Tim Berners-Lee, investigador del CERN, propuso un sistema de hipertexto para
+          compartir documentos.
+        </li>
+        <li><strong>1991:</strong> HTML fue oficialmente lanzado.</li>
+        <li>
+          Desde entonces, HTML se convirtió en una de las bases principales de internet junto con CSS y JavaScript.
+        </li>
+      </ul>
+
+      <h3>¿Qué necesitas para empezar?</h3>
+      <p>
+        Un editor de texto y tu imaginación es todo lo que necesitas para estar en internet. Para empezar puedes usar
+        VS Code, el navegador y archivos con extensión <code>.html</code>.
+      </p>
+
+      <h3>¿Qué es una etiqueta?</h3>
+      <p>
+        Una etiqueta describe qué tipo de contenido contiene una parte de la página. Por ejemplo:
+      </p>
+      <pre><code>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;p&gt;Este es un párrafo.&lt;/p&gt;
+&lt;a href="https://developer.mozilla.org/"&gt;Leer más&lt;/a&gt;</code></pre>
+    </section>
+
+    <!-- Estructura HTML -->
+    <section class="card">
+      <h2>🧱 Estructura HTML</h2>
+      <p class="muted">
+        Toda página HTML comienza con una estructura base. Esta estructura indica el tipo de documento, abre el
+        documento HTML, define metadatos y contiene el contenido visible.
+      </p>
+
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Título de página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  Cuerpo de página
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h3>Partes de la estructura</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Elemento</th>
+            <th>Función</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;!DOCTYPE html&gt;</code></td>
+            <td>Declaración del tipo de documento. Le indica al navegador que usaremos HTML moderno.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;html&gt;</code></td>
+            <td>Apertura de la etiqueta raíz que contiene todo el documento.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;head&gt;</code></td>
+            <td>Describe metadatos e información importante para navegadores, buscadores, estilos y scripts.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;title&gt;</code></td>
+            <td>Define el título que aparece en la pestaña del navegador.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;body&gt;</code></td>
+            <td>Contiene el contenido visible de la página.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Componentes principales -->
+    <section class="card">
+      <h2>⭐ Componentes principales</h2>
+      <p class="muted">
+        Los componentes principales son etiquetas que usamos constantemente para estructurar contenido.
+      </p>
+
+      <h3>Títulos</h3>
+      <p>
+        HTML tiene seis niveles de títulos, desde <code>&lt;h1&gt;</code> hasta <code>&lt;h6&gt;</code>. El
+        <code>&lt;h1&gt;</code> representa el título más importante.
+      </p>
+      <pre><code>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Sección interna&lt;/h3&gt;</code></pre>
+
+      <h3>Párrafos</h3>
+      <p>
+        Los párrafos se escriben con <code>&lt;p&gt;</code> y sirven para bloques de texto.
+      </p>
+      <pre><code>&lt;p&gt;HTML nos permite organizar el contenido de una página web.&lt;/p&gt;</code></pre>
+
+      <h3>Enlaces</h3>
+      <p>
+        Los enlaces usan la etiqueta <code>&lt;a&gt;</code> y el atributo <code>href</code> para indicar el destino.
+      </p>
+      <pre><code>&lt;a href="https://www.pucetec.edu.ec"&gt;Visitar PUCETEC&lt;/a&gt;</code></pre>
+
+      <h3>Imágenes</h3>
+      <p>
+        Las imágenes se agregan con <code>&lt;img&gt;</code>. El atributo <code>src</code> indica la ruta y
+        <code>alt</code> describe la imagen para accesibilidad.
+      </p>
+      <pre><code>&lt;img src="assets/logo.png" alt="Logo de PUCETEC"&gt;</code></pre>
+
+      <h3>Campos de entrada</h3>
+      <p>
+        Los campos de entrada son componentes principales porque permiten que el usuario escriba, seleccione o envíe
+        información dentro de una página web. Se crean principalmente con la etiqueta <code>&lt;input&gt;</code>.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Uso</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>text</code></td>
+            <td>Texto corto, como nombres o apellidos.</td>
+            <td><code>&lt;input type="text" name="nombre"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>email</code></td>
+            <td>Direcciones de correo electrónico.</td>
+            <td><code>&lt;input type="email" name="correo"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>password</code></td>
+            <td>Contraseñas o datos sensibles que deben ocultarse.</td>
+            <td><code>&lt;input type="password" name="clave"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>number</code></td>
+            <td>Valores numéricos.</td>
+            <td><code>&lt;input type="number" name="edad"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>date</code></td>
+            <td>Fechas.</td>
+            <td><code>&lt;input type="date" name="fecha"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>checkbox</code></td>
+            <td>Opciones que pueden activarse o desactivarse.</td>
+            <td><code>&lt;input type="checkbox" name="acepta"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>radio</code></td>
+            <td>Selección de una opción dentro de un grupo.</td>
+            <td><code>&lt;input type="radio" name="turno" value="mañana"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>submit</code></td>
+            <td>Botón para enviar un formulario.</td>
+            <td><code>&lt;input type="submit" value="Enviar"&gt;</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Ejemplo de formulario con inputs</h3>
+      <pre><code>&lt;form&gt;
+  &lt;label for="nombre"&gt;Nombre&lt;/label&gt;
+  &lt;input id="nombre" name="nombre" type="text"&gt;
+
+  &lt;label for="correo"&gt;Correo&lt;/label&gt;
+  &lt;input id="correo" name="correo" type="email"&gt;
+
+  &lt;label for="clave"&gt;Contraseña&lt;/label&gt;
+  &lt;input id="clave" name="clave" type="password"&gt;
+
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+    </section>
+
+    <!-- Más componentes principales -->
+    <section class="card">
+      <h2>🧩 Más componentes principales</h2>
+
+      <h3>Listas</h3>
+      <p>Las listas ayudan a organizar elementos relacionados.</p>
+      <div class="grid">
+        <div>
+          <h4>Lista no ordenada</h4>
+          <pre><code>&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+        <div>
+          <h4>Lista ordenada</h4>
+          <pre><code>&lt;ol&gt;
+  &lt;li&gt;Crear archivo&lt;/li&gt;
+  &lt;li&gt;Escribir HTML&lt;/li&gt;
+  &lt;li&gt;Abrir en navegador&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        </div>
+      </div>
+
+      <h3>Contenedores</h3>
+      <p>
+        <code>&lt;div&gt;</code> agrupa bloques de contenido y <code>&lt;span&gt;</code> agrupa texto en línea.
+      </p>
+      <pre><code>&lt;div&gt;
+  &lt;h2&gt;Perfil&lt;/h2&gt;
+  &lt;p&gt;Hola, soy &lt;span&gt;Ana&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+
+    <!-- Componentes secundarios -->
+    <section class="card">
+      <h2>🔧 Componentes secundarios</h2>
+      <p class="muted">
+        Estos elementos complementan la página y permiten crear contenido más completo.
+      </p>
+
+      <h3>Tablas</h3>
+      <p>Las tablas organizan información en filas y columnas.</p>
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Etiqueta&lt;/th&gt;
+    &lt;th&gt;Uso&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;h1&lt;/td&gt;
+    &lt;td&gt;Título principal&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <h3>Formularios</h3>
+      <p>
+        Los formularios permiten agrupar campos de entrada, botones y otros controles para enviar información al
+        servidor.
+      </p>
+      <pre><code>&lt;form&gt;
+  &lt;label for="nombre"&gt;Nombre&lt;/label&gt;
+  &lt;input id="nombre" name="nombre" type="text"&gt;
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+    </section>
+
+    <!-- Más componentes secundarios -->
+    <section class="card">
+      <h2>🧰 Más componentes secundarios</h2>
+
+      <h3>Elementos semánticos</h3>
+      <p>
+        HTML moderno incluye etiquetas que comunican el propósito de cada sección de la página.
+      </p>
+      <ul>
+        <li><code>&lt;header&gt;</code>: encabezado de una página o sección.</li>
+        <li><code>&lt;nav&gt;</code>: navegación principal.</li>
+        <li><code>&lt;main&gt;</code>: contenido principal.</li>
+        <li><code>&lt;section&gt;</code>: sección temática.</li>
+        <li><code>&lt;article&gt;</code>: contenido independiente.</li>
+        <li><code>&lt;footer&gt;</code>: pie de página.</li>
+      </ul>
+
+      <pre><code>&lt;header&gt;
+  &lt;h1&gt;Mi sitio web&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Noticias&lt;/h2&gt;
+    &lt;p&gt;Contenido principal de la sección.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+
+      <h3>Comentarios</h3>
+      <p>
+        Los comentarios sirven para dejar notas en el código. No se muestran visualmente en el navegador.
+      </p>
+      <pre><code>&lt;!-- Este es un comentario en HTML --&gt;</code></pre>
+    </section>
+
+    <!-- CSS -->
+    <section class="card">
+      <h2>🎨 Hojas de Estilos CSS (Cascading Style Sheets)</h2>
+      <p class="muted">
+        CSS define la presentación visual de una página web. HTML estructura el contenido; CSS controla cómo se ve.
+      </p>
+
+      <h3>¿Qué puede cambiar CSS?</h3>
+      <ul>
+        <li>Colores de texto y fondo.</li>
+        <li>Tamaños y familias de fuente.</li>
+        <li>Espaciados internos y externos.</li>
+        <li>Bordes, sombras y esquinas redondeadas.</li>
+        <li>Distribución de elementos en pantalla.</li>
+      </ul>
+
+      <h3>Ejemplo de CSS</h3>
+      <pre><code>body {
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+h1 {
+  color: #2563eb;
+}</code></pre>
+
+      <h3>Conectar CSS con HTML</h3>
+      <p>
+        Normalmente conectamos una hoja de estilos desde el <code>&lt;head&gt;</code> usando
+        <code>&lt;link&gt;</code>.
+      </p>
+      <pre><code>&lt;link rel="stylesheet" href="assets/style.css"&gt;</code></pre>
+    </section>
+
+    <!-- HTTP -->
+    <section class="card">
+      <h2>📡 HTTP (Hypertext Transfer Protocol)</h2>
+      <p class="muted">
+        HTTP es el protocolo que permite la comunicación entre cliente y servidor en la web.
+      </p>
+
+      <h3>Cliente y servidor</h3>
+      <ul>
+        <li><strong>Cliente:</strong> Normalmente es el navegador del usuario.</li>
+        <li><strong>Servidor:</strong> Equipo o servicio que responde con páginas, archivos o datos.</li>
+        <li><strong>Request:</strong> Solicitud enviada por el cliente.</li>
+        <li><strong>Response:</strong> Respuesta enviada por el servidor.</li>
+      </ul>
+
+      <h3>Métodos HTTP</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Método</th>
+            <th>Uso común</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>GET</code></td>
+            <td>Solicitar información o cargar una página.</td>
+          </tr>
+          <tr>
+            <td><code>POST</code></td>
+            <td>Enviar información nueva al servidor, por ejemplo un formulario.</td>
+          </tr>
+          <tr>
+            <td><code>PUT</code></td>
+            <td>Actualizar o reemplazar un recurso existente.</td>
+          </tr>
+          <tr>
+            <td><code>DELETE</code></td>
+            <td>Eliminar un recurso existente.</td>
+          </tr>
+          <tr>
+            <td><code>HEAD</code></td>
+            <td>Solicitar solo los encabezados de una respuesta, sin el cuerpo.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <pre><code>GET /index.html HTTP/1.1
+Host: ejemplo.com</code></pre>
+    </section>
+
+    <!-- Preguntas / mini desafío -->
+    <section class="card">
+      <h2>❓ Preguntas / Mini desafío</h2>
+
+      <details>
+        <summary>¿Qué significa HTML?</summary>
+        <p>HTML significa HyperText Markup Language, o Lenguaje de Marcado de Hipertexto.</p>
+      </details>
+
+      <details>
+        <summary>¿Qué parte del HTML contiene el contenido visible?</summary>
+        <p>El contenido visible se escribe dentro de la etiqueta <code>&lt;body&gt;</code>.</p>
+      </details>
+
+      <details>
+        <summary>¿Para qué sirve CSS?</summary>
+        <p>CSS sirve para definir la apariencia visual de la página: colores, tamaños, fuentes, espacios y layout.</p>
+      </details>
+
+      <details>
+        <summary>¿Cuál es la diferencia entre GET y POST?</summary>
+        <p><code>GET</code> se usa para solicitar información. <code>POST</code> se usa para enviar información nueva al servidor.</p>
+      </details>
+
+      <h3>🎯 Mini desafío final</h3>
+      <div class="tip">
+        <p><strong>Desafío:</strong> Crea una página HTML que incluya:</p>
+        <ol>
+          <li>La estructura base con <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>.</li>
+          <li>Un título principal con <code>&lt;h1&gt;</code>.</li>
+          <li>Dos párrafos usando <code>&lt;p&gt;</code>.</li>
+          <li>Una lista de tus sitios web favoritos.</li>
+          <li>Un enlace a uno de esos sitios.</li>
+        </ol>
+        <p><em>Tip: Guarda el archivo con extensión <code>.html</code> y ábrelo en tu navegador.</em></p>
+      </div>
+    </section>
+
+    <footer>
+      <p class="muted">
+        <strong>Facultad:</strong> Pucetec<br>
+        <strong>Carrera:</strong> Desarrollo de Software<br>
+        <strong>Materia:</strong> Desarrollo Web<br>
+        <strong>Docente:</strong> Fabián Aguirre
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>
