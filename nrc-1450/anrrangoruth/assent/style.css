@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+}
+h2{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#maincontainer{
+    display: flex;
+    border-radius: 15px;
+}
+#firstcontainer{
+    display: flex;
+    background-color: #836192;
+    width: 60%;
+}
+#secondcontainer{
+    background-color: #ae66cf;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+#secondcontainer.items.alternate{
+    color: blue;
+}
+#cuerpo{
+    height: 200px;
+    width: 100%;
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    text-align: center;
+}
+#boton{
+    background-color: aqua;
+}
+#cuerpoproductos{
+    height: 200px;
+    width: 100%;
+    background-color: antiquewhite;
+}
+#productos{
+    display: flex;
+    justify-content: space-around;
+    background-color: aquamarine;
+}
