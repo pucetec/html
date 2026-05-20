@@ -1,30 +1,23 @@
             body {
                 margin: 0;
                 font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
+                background-color: #ffffff;
                 color: #222;
             }
             #maincontainer {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                padding: 16px;
-                width: 100%;
-                background-color: #fff;
-                padding: 24px;
+                justify-content: space-around;
+                align-items: center;
+                border: 2px solid #333;
+                height: 200px;
+                background-color: #dd5f0b;
             }
-            #fistcontainer {
-                background-color: #ffffff;
-                width: 65%;
-                min-width: 220px;
-                padding: 20px;
+            #firstcontainer {
+                background-color: #dd5f0b;
                 color: #000000;
             }
             #secondcontainer {
-                background-color: #ffffff;
-                width: 30%;
-                min-width: 180px;
-                padding: 20px;
+                background-color: #dd5f0b;
                 color: #000000;
                 display: flex;
                 justify-content: center;
@@ -39,7 +32,6 @@
                 padding: 8px 0;
             }
             #partevisible {
-                width: 100%;
                 background-color: #e67f3b;
                 padding: 24px;
                 text-align: center;
@@ -56,15 +48,61 @@
                 margin-top: 16px;
             }
             #productosdestacados {
-                width: 100%;
-                background-color: #fff;
-                padding: 24px;
-                border-radius: 12px;
+                display: flex;
+                justify-content: space-around;
+                text-align: center;
             }
             #contactos {
-                width: 100%;
                 background-color: #000000;
                 padding: 24px;
-                border-radius: 12px;
                 color: #fff;
+            }
+            #pizzapersonal, #hamburgesaclasica, #papasfritas {
+                background: #ffffff;
+                color: rgb(0, 0, 0);
+                padding: 20px;
+                border-radius: 8px;
+                border: #000000 1px solid;
+                direction: rtl;
+                justify-content: space-around;
+            }
+            .comida {
+                background-color: #ffffff;
+                padding: 20px;
+                color: #000000;
+                border: 1px solid #ddd;
+                border-radius: 12px;
+                margin-bottom: 16px;
+            }
+            #promociones {
+                background-color: #ffffff;
+                padding: 24px;
+                color: #000000;
+                text-align: center;
+            }
+            #quepromociona {
+                background-color: #ffffff;
+                color: #000000;
+                padding: 12px 24px;
+                font-size: 1rem;
+                border-radius: 8px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+            }
+            #combofamiliar, #comboEstudiante {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                background: #000000;
+                color: white;
+                border-radius: 8px;
+                padding: 16px;
+                gap: 16px;
+                width: 45%;
+            }
+            #hamburguesaespecial {
+                text-align: center;
             }
