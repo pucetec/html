@@ -1,66 +1,155 @@
+body{
+    margin: 0;
+}
+h2{
+    margin-top: 0;
+    margin-bottom: 0;
+}
 #mainContainer{
                 display: flex;
-                background-color: rgb(255, 145, 0);
+                background-color: #F5EBDC;
                 width: 100%;
                 font-size:small;
+                font-family: Arial, Helvetica, sans-serif;
+                padding-top: 16px;
+                padding-bottom: 16px;
             }
 #firstContainer{
     width: 64%;
+    font-size: medium;
+    font-weight: 600;
 }
 #secondContainer{
     width: 36%;
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
 }
 #firstContainer h2{
-    padding-left: 8px;
+    padding-left: 16px;
 }
 .items{
     color: black;
 }
 #secondContainer.items{
-    color: blue;
+    color: #502314;
+    font-size: smaller;
 }
 #thirdContainer{
-    height: 350px;
-    background-color: rgb(244, 231, 88);
+    height: 450px;
+    background-color: #FF8731;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+#thirdContainer h2{
+    font-size: xx-large;
+}
+#thirdContainer div{
+    padding: 8px;
 }
 #orderButton{
-    padding: 10px;
     height:40px;
     width: 150px;
     background-color: black;
     color: white;
     display: inline-flex;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 32px;
     justify-content: center;
+    font-weight: bold;
 }
 #fourthContainer{
-    height: 300px;
+    height: auto;
     background-color: antiquewhite;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #fourthContainer h2{
-    padding: 10px;
+    padding: 24px;
+    font-size: 26px;
+    color: #D62300;
+}
+#fourthContainer h3{
+    padding-top: 16px;
+    padding-bottom: 8px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    color: #502314;
+}
+#fourthContainer h4{
+    padding-top: 0px;
+    padding-bottom: 8px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: lighter;
 }
 #imageContainer{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 32px;
 }
 .imageBox{
-    height: 200px;
-    width: 250px;
+    height: 300px;
+    width: 280px;
     background-color: rgb(247, 249, 249);
     border-style: solid;
     border-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    border-radius: 24px;
+    font-size: medium;
+    box-shadow: 10px 10px lightblue;
+}
+img{
+    border-radius: 16px;
+}
+.imageBox div{
+    padding-top: 0px;
+    font-size: large;
+    color: #f97619;
+    font-weight: 550;
+}
+#fifthContainer{
+    height: 300px;
+    background-color: #EBE1D7;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+#fifthContainer h2{
+    padding: 24px;
+}
+#promoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.promoBox{
+    margin-top: 8px;
+    height: 100px;
+    width: 450px;
+    padding-left: 16px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    text-align: left;
 }
