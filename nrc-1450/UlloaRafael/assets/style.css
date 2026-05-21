@@ -7,7 +7,7 @@ h2{
 }
 #mainContainer{
                 display: flex;
-                background-color: #F5EBDC;
+                background-color: #481f11;
                 width: 100%;
                 font-size:small;
                 font-family: Arial, Helvetica, sans-serif;
@@ -18,6 +18,7 @@ h2{
     width: 64%;
     font-size: medium;
     font-weight: 600;
+    color: white;
 }
 #secondContainer{
     width: 36%;
@@ -27,17 +28,17 @@ h2{
     align-items: center;
 }
 #firstContainer h2{
-    padding-left: 16px;
+    padding-left: 32px;
 }
 .items{
     color: black;
 }
 #secondContainer.items{
-    color: #502314;
+    color: white;
     font-size: smaller;
 }
 #thirdContainer{
-    height: 450px;
+    height: 824px;
     background-color: #FF8731;
     text-align: center;
     display: flex;
@@ -65,7 +66,7 @@ h2{
     font-weight: bold;
 }
 #fourthContainer{
-    height: auto;
+    height: 500px;
     background-color: antiquewhite;
     text-align: center;
     display: flex;
@@ -75,10 +76,10 @@ h2{
 #fourthContainer h2{
     padding: 24px;
     font-size: 26px;
-    color: #D62300;
+    color: #502314;
 }
 #fourthContainer h3{
-    padding-top: 16px;
+    padding-top: 10px;
     padding-bottom: 8px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -98,6 +99,7 @@ h2{
     align-items: center;
     justify-content: space-around;
     margin-bottom: 32px;
+    margin-top: 16px;
 }
 .imageBox{
     height: 300px;
@@ -123,7 +125,7 @@ img{
     font-weight: 550;
 }
 #fifthContainer{
-    height: 300px;
+    height: 320px;
     background-color: #EBE1D7;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -132,24 +134,51 @@ img{
 }
 #fifthContainer h2{
     padding: 24px;
+    font-size: 26px;
+}
+#fifthContainer h3{
+    margin-top: 0px;
+    margin-bottom: 8px;
 }
 #promoContainer{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-top: 32px;
     margin-bottom: 16px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .promoBox{
-    margin-top: 8px;
     height: 100px;
     width: 450px;
-    padding-left: 16px;
+    padding-left: 24px;
     background-color: whitesmoke;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     background-color: black;
     color: white;
     border-radius: 20px;
+}
+.promoText{
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.promoPrice{
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    justify-content: right;
+    padding-right: 16px;
+}
+footer{
+    height: 64px;
+    padding-top: 16px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
 }
